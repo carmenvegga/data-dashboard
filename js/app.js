@@ -50,6 +50,7 @@ var sedes = document.getElementById('sedes');
 
 var onButtonClick = function(){
 //Condicional para borrar el select cada vez que suceda el evento
+//Porque se creaba un select generacion por cada click
   var selectAvailable = document.getElementById('generation');
   if (selectAvailable !== null){
     selectAvailable.remove();
@@ -57,7 +58,7 @@ var onButtonClick = function(){
 
   var valueSede = document.getElementById('sedes');
   //console.log(valueSede.value);
-//accesando al objeto(key) seleccionado en el select
+  //accesando al objeto(key) seleccionado en el select
   var generation = data[valueSede.value];
   //console.log(generation);
 //agregando con este evento las opciones de generacion

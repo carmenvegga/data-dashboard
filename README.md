@@ -29,7 +29,9 @@
 1.- Mostrar los datos procesados en un gráfico
 2.- Tener un botón que permita indicar que una estudiante ha salido del Bootcamp y alterar los totales afectados por este cambio.
 
-## Planeación
+## Planeación Cronograma 
 (imagenes de cronograma)
 
 ## Definición del diseño
+
+##
