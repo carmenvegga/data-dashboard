@@ -1,27 +1,35 @@
-# Data Dashboard
+# Data Dashboard Laboratoria
 
-* **Track:** _Common Core_
-* **Curso:** _Creando tu primer sitio web interactivo_
-* **Unidad:** _Producto final_
+ Las TMs han solicitado que construyamos una herramienta web donde puedan ver estos datos fácil y rápidamente. Y nos comentaron que estos son los datos que revisan normalmente:
 
-***
+ ## Requerimientos
 
-## Flujo de trabajo
+1.- El total de estudiantes presentes por sede y generación.
 
-1. Debes realizar un [**fork**](https://gist.github.com/ivandevp/1de47ae69a5e139a6622d78c882e1f74)
-   de este repositorio.
+2.- El porcentaje de deserción de estudiantes.
 
-2. Luego deberás **clonar** tu fork en tu máquina. Recuerda que el comando a usar
-   es `git clone` y su estructura normalmente se ve así:
+3.- La cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados. La meta de puntos es 70% del total de puntos en HSE y en tech.
 
-   ```bash
-   git clone https://github.com/<nombre-de-usuario>/freelancer.git
-   ```
+4.- El porcentaje que representa el dato anterior en relación al total de estudiantes.
 
-3. Cuando hayas terminado tu producto, envía un Pull Request a este repositorio
-   (puedes solicitar apoyo de tus profes para este paso).
+5.- El Net Promoter Score (NPS) promedio de los sprints cursados. El NPS se calcula en base a la encuesta que las estudiantes responden al respecto de la recomendación que darían de Laboratoria.
 
-> Nota: No olvides que es una buena práctica describir tu proyecto en este
-> archivo `README.md` y también desplegar tu web a Github Pages :smiley:.
+6.- La cantidad y el porcentaje que representa el total de estudiantes que superan la meta de puntos técnicos en promedio y por sprint.
 
-*prueba
+7.- La cantidad y el porcentaje que representa el total de estudiantes que superan la meta de puntos de HSE en promedio y por sprint.
+
+8.- El porcentaje de estudiantes satisfechas con la experiencia de Laboratoria.
+
+9.- La puntuación promedio de l@s profesores.
+
+10.- La puntuación promedio de l@s jedi masters.
+
+## Requerimientos adicionales
+
+1.- Mostrar los datos procesados en un gráfico
+2.- Tener un botón que permita indicar que una estudiante ha salido del Bootcamp y alterar los totales afectados por este cambio.
+
+## Planeación
+(imagenes de cronograma)
+
+## Definición del diseño
