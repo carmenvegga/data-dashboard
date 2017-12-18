@@ -356,3 +356,85 @@ var onButtonClickGeneration = function(data) {
   //crear objetos que contengan esos datos ejemplo
   //var generation = data[valueSede.value];
 }
+
+
+
+
+// Elementos agregados por Toni
+
+var sedeList = Object.keys(data);
+var sedeAqp = data.AQP;
+var sedeCdmx = data.CDMX;
+var sedeLim = data.LIM;
+var sedeScl = data.SCL;
+
+// SEDE AREQUIPA
+
+//1.-Total de estudiantes presentes por sede y generación
+//RUTA data.AQP['2016-2'].students
+
+
+//variable para guardar las dos generaciones de Arequipa
+var generationAqp1 = sedeAqp['2016-2'];
+var generationAqp2 = sedeAqp['2017-1'];
+
+//primer generación
+var students = generationAqp1.students;
+var studentsLength =students.length -1;
+var dropoutStudents = 0;
+for (var i = 0; i<studentsLength; i++){
+  if(students[i].active===false){
+    dropoutStudents +=1;
+  }
+}
+var counterAqp = studentsLength - dropoutStudents;
+console.log(dropoutStudents);
+
+
+/*segunda genración
+var students = generationAqp2.students;
+var studentsLength =students.length -1;
+var dropoutStudents = 0;
+for (var i = 0; i<studentsLength; i++){
+  if(students[i].active===false){
+    dropoutStudents +=1;
+  }
+}
+var counterAqp = studentsLength - dropoutStudents;*/
+
+
+
+//creando el elemento
+var totaEnrolledStudents = document.createElement('p');
+//agregando atributos
+totaEnrolledStudents.classList.add('total-enrolled-students');
+totaEnrolledStudents.innerText = counterAqp;
+//añadiendo elemento al html
+enrollmentContainerOne.appendChild(totaEnrolledStudents);
+
+
+
+//2. El promedio de deserción de estudiantes
+//RUTA data.AQP['2016-2'].student.active.false
+
+var dropout = (dropoutStudents * 100)/studentsLength;
+
+
+//creando el elemento
+var dropoutRate = document.createElement('p');
+//agregando atributos
+dropoutRate.classList.add('dropout');
+dropoutRate.innerText = dropout +'%';
+//añadiendo elemento al html
+enrollmentContainerTwo.appendChild(dropoutRate);
+
+
+/* 3. Cantidad de estudiantes que superan la meta de puntos
+//en promedio de todos los sprints cursados
+var ratings = generationAqp1.ratings;
+var ratingsLength = ratings.length;sd
+console.log(ratingsLength);
+var meetTheTarget = 0;
+for ( var i = 0; i<ratings.length; i++){
+  var eachRating = ratings[i].students.supera;
+}console.log(eachRating); */

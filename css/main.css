@@ -485,3 +485,24 @@ body {
 	color:#5C5B5B;
 	font-weight: 700;
 }
+
+
+/*estilos data*/
+
+.total-enrolled-students{
+	color: white;
+	font-size: 55px;
+	margin-top: -10px;
+	margin-left: 45px;
+	display: inline-block;
+	text-align: center;
+}
+
+.dropout {
+	color: #F7B617;
+	font-size: 50px;
+	margin-top: -5px ;
+	margin-left: 10px;
+	display: inline-block;
+	text-align: center;
+}
