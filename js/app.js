@@ -52,8 +52,10 @@ var skillsLife = document.createElement('h3');
 var skillsBySprint2 = document.createElement('div');
 var skillsTwo = document.createElement('div');
 var skillsContainerOne = document.createElement('div');
+var skillsTechText= document.createElement('p');
 var skillsContainerTwo = document.createElement('div');
 var skillsContainerThree = document.createElement('div');
+var skillsHseText= document.createElement('p');
 var skillsContainerFour = document.createElement('div');
 var skillsRuler = document.createElement('div');
 //sección students satisfaction
@@ -145,8 +147,12 @@ skillsBySprint1.classList.add('skills-by-sprint-1');
 skillsBySprint2.classList.add('skills-by-sprint-2');
 skillsTwo.classList.add('skills-two');
 skillsContainerOne.classList.add('skills-container-one');
+skillsTechText.classList.add('skill-tech-text');
+skillsTechText.innerText = '# & % THAT MEET THE TARGET';
 skillsContainerTwo.classList.add('skills-container-two');
 skillsContainerThree.classList.add('skills-container-three');
+skillsHseText.classList.add('skill-hse-text');
+skillsHseText.innerText = '# & % THAT MEET THE TARGET';
 skillsContainerFour.classList.add('skills-container-four');
 skillsRuler.classList.add('skills-ruler');
 //sección students satisfaction
@@ -226,9 +232,11 @@ skills.appendChild(skillsBySprint2);
 secondSection.appendChild(skillsTwo);
 skillsTwo.appendChild(skillsContainerOne);
 skillsTwo.appendChild(skillsContainerTwo);
+skillsTwo.appendChild(skillsTechText);
 skillsTwo.appendChild(skillsRuler);
 skillsTwo.appendChild(skillsContainerThree);
 skillsTwo.appendChild(skillsContainerFour);
+skillsTwo.appendChild(skillsHseText);
 //sección students satisfaction
 mainBody.appendChild(thirdSection);
 thirdSection.appendChild(satisfaction);

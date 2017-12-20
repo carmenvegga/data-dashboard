@@ -35,6 +35,34 @@ body {
   display: inline-block;
 }
 
+#skills-container-one {
+  margin-left: 50px;
+  margin-top: 15px;
+
+}
+
+#skills-container-three{
+  margin-left: 50px;
+  margin-top: 15px;
+}
+
+.skill-tech-text{
+  color: #5C5B5B;
+  font-weight: bold;
+  height: 60px;
+  margin-top: 20px;
+  margin-left: -230px;
+  display: inline-block;
+  
+}
+.skill-hse-text{
+  color: #5C5B5B;
+  font-weight: bold;
+  height: 60px;
+  margin-top: 20px;
+  margin-left: -230px;
+  display: inline-block;
+}
 ul li {
   list-style: none;
   display: inline-block;
