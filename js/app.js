@@ -1,20 +1,7 @@
-//var sede = Object.keys(data);
-//console.log(sede);
-//var generation = Object.keys(sede[]); //va dentro de la función [i]
-//var sedeLength = sede.length;
-//var generationLength = generation.length;
-//console.log(generationLength)
-/*
-var totalStudentsBySede= function(){
-  for (var i= 0; i<=sedeLength; i++){
-  //  for (var j= 0; j<=generationLength; i++);
-  }
-}
-*/
-
-//Dashboard Toni
 /*LLAMANDO AL CONTENEDOR*/
 var container = document.getElementById('container');
+//llamando a contenedor del menú
+var menu = document.getElementById('menu');
 
 /*CREANDO ELEMENTOS*/
 
@@ -23,6 +10,10 @@ var navBar = document.createElement('header');
 var logoSection = document.createElement('div');
 var userSection = document.createElement('div');
 var logo = document.createElement('img');
+//elementos de botones
+var buttonLogOut = document.createElement('a');
+var buttonSettings = document.createElement('a');
+var settingsIcon = document.createElement('i');
 //main
 var mainSide = document.createElement('section');
 var mainBody = document.createElement('section');
@@ -50,7 +41,6 @@ var nps = document.createElement('div');
 var npsTitle = document.createElement('h3');
 var npsRule = document.createElement('div');
 var npsContainerOne = document.createElement('div');
-
 var npsDescriptionOne = document.createElement('p');
 
 //sección skills
@@ -89,12 +79,24 @@ var jediDescriptionOne = document.createElement('p');
 
 /*AGREGANDO ATRIBUTOS A LOS ELEMENTOS*/
 
-//barra de navegción
+//barra de navegación
 navBar.classList.add('nav-bar');
 logoSection.classList.add('logo-section');
 userSection.classList.add('user-section');
 logo.setAttribute('src', 'assets/images/logo-laboratoria.svg');
 logo.classList.add('logo');
+
+//agregando atributos de botones
+buttonLogOut.classList.add('log-out-button');
+buttonLogOut.innerText = 'LOG OUT';
+buttonLogOut.setAttribute("href", "#");
+buttonSettings.classList.add('settings-button');
+buttonSettings.innerText = 'SETTINGS';
+buttonSettings.setAttribute("href", "#");
+settingsIcon.classList.add('fa');
+settingsIcon.classList.add('fa-cog');
+settingsIcon.setAttribute('area-hidden', 'true');
+
 //main
 mainSide.classList.add('main-side');
 mainBody.classList.add('main-body');
@@ -129,9 +131,7 @@ npsTitle.innerText = 'NPS';
 npsTitle.classList.add('nps-title');
 npsRule.classList.add('nps-rule');
 npsContainerOne.classList.add('nps-container-one');
-
 npsDescriptionOne.classList.add("nps-desc-one");
-
 npsDescriptionOne.innerText = ' % NPS CUMULATIVE';
 
 //sección skills
@@ -178,11 +178,16 @@ jediDescriptionOne.innerText = 'OVERALL JEDI RATING';
 
 /*COLOCANDO LOS ELEMENTOS EN EL HTML*/
 
-//barra de navegción
+//barra de navegación
+
 container.appendChild(navBar);
 navBar.appendChild(logoSection);
 navBar.appendChild(userSection);
 logoSection.appendChild(logo);
+userSection.appendChild(menu);
+userSection.appendChild(buttonSettings);
+userSection.appendChild(buttonLogOut);
+buttonSettings.appendChild(settingsIcon);
 //main
 container.appendChild(mainSide);
 container.appendChild(mainBody);
@@ -290,6 +295,7 @@ var mapSedes = function(data) {
     var optionSede = document.createElement('option');
     //en cada <option> contedrá el valor/value, y el sedeList, tomando en cuenta la variable local
     optionSede.setAttribute('value', sedeList[i]);
+    optionSede.classList.add('sedes');
     //Imprime el nameSede de la iteración sedeList
     optionSede.innerText = nameSede;
     //Se le agrega <option> como hijo al <select>
@@ -365,21 +371,46 @@ var onButtonClickGeneration = function() {
   var updateDashboard = function() */
   //llamando a las funciones que mapean la data, al suceder evento click en generación
   totalEnrolledStudents(data[selectSedes][generationGlobal]['students']);
-  dropoutNumber(data[selectSedes][generationGlobal]['students']);
+  dropoutPercent(data[selectSedes][generationGlobal]['students']);
   meetTheTarget(data[selectSedes][generationGlobal]['ratings']);
   superaPercent(data[selectSedes][generationGlobal]['ratings'], data[selectSedes][generationGlobal]['students']);
-  promotersPercent(data[selectSedes][generationGlobal]['ratings']['nps']); //algo no jala
+  promotersPercent(data[selectSedes][generationGlobal]['ratings']);
+  studentPercentSatisfaction(data[selectSedes][generationGlobal]['ratings']);
+  teacherRating(data[selectSedes][generationGlobal]['ratings']);
+  jediRating(data[selectSedes][generationGlobal]['ratings']);
+  techSkillsNumber(data[selectSedes][generationGlobal]['students']);
+  hseSkillsNumber(data[selectSedes][generationGlobal]['students']);
 }
 
 
+// # Número total de estudiantes presentes por sede y generación
+var totalEnrolledStudents = function(totalStudents) {
 
-//¿Que hace ésta función? devuelve el numero de desertoras.
-var dropoutNumber = function(totalStudents) {
+  //Condicional para borrar el <p> con información cada vez que se seleccione generación o se cambie
+  var totalNumberDisplay = document.getElementById('total-number');
+  if (totalNumberDisplay !== null) {
+    totalNumberDisplay.remove();
+  }
+
+  var studentsLength = totalStudents.length;
+  //tomando la classe del container, para poder agregar el elemento <p>
+  var totalNumberContainer = document.getElementsByClassName('enrollment-container-one');
+  var totalNumber = document.createElement('p');
+  totalNumber.setAttribute('id', 'total-number');
+  totalNumber.classList.add('display-number'); //clases globales
+  totalNumber.innerText = studentsLength;
+  //añadiendo el parrafo que contendrá la cantidad de total estudiantes, al elemento contenedor.
+  totalNumberContainer[0].appendChild(totalNumber);
+}
+
+
+// % Porcentaje de desertoras.
+var dropoutPercent = function(totalStudents) {
   //console.log(totalStudents);
   var studentsLength = totalStudents.length;
   var dropoutStudents = 0;
 
-  //Condicional para borrar el <p> con información cada vez que se seleccione generación o se cambie
+  //Condicional para borrar el elemento contenedor de data
   var totalDropoutDisplay = document.getElementById('total-dropout');
   if (totalDropoutDisplay !== null) {
     totalDropoutDisplay.remove();
@@ -395,41 +426,22 @@ var dropoutNumber = function(totalStudents) {
 
   //llamando al elemento que contendra el <p>, por nombre de clase
   var dropoutContainer = document.getElementsByClassName('enrollment-container-two');
-  var totalDropoutNumber = document.createElement('p');
-  //asignando a los <p> totalDropOutNumber un atributo id='total-dropout'
-  totalDropoutNumber.setAttribute('id', 'total-dropout');
-
+  var totalDropoutPercent = document.createElement('p');
+  //asignando un atributo id='total-dropout'
+  totalDropoutPercent.setAttribute('id', 'total-dropout');
+  totalDropoutPercent.classList.add('display-percent'); //estilos globales
   //Porcentaje de deserción
-  var dropoutPercent = (dropoutStudents * 100) / studentsLength;
+  var dropoutPercent = ((dropoutStudents * 100) / studentsLength).toFixed(1);
   //imprimiendo el p + string'%
-  totalDropoutNumber.innerText = dropoutPercent + '%';
+  totalDropoutPercent.innerText = dropoutPercent + '%';
   //agregando hijo a contenedor padre
-  dropoutContainer[0].appendChild(totalDropoutNumber);
+  dropoutContainer[0].appendChild(totalDropoutPercent);
 }
 
 
 
-//1.-Data-dashboard : Total de estudiantes presentes por sede y generación
-var totalEnrolledStudents = function(totalStudents) {
 
-  //Condicional para borrar el <p> con información cada vez que se seleccione generación o se cambie
-  var totalNumberDisplay = document.getElementById('total-number');
-  if (totalNumberDisplay !== null) {
-    totalNumberDisplay.remove();
-  }
-
-  var studentsLength = totalStudents.length;
-  //tomando la classe del container, para poder agregar el elemento <p>
-  var totalNumberContainer = document.getElementsByClassName('enrollment-container-one');
-  var totalNumber = document.createElement('p');
-  totalNumber.setAttribute('id', 'total-number');
-  totalNumber.innerText = studentsLength;
-  //añadiendo el parrafo que contendrá la cantidad de total estudiantes, al elemento contenedor.
-  totalNumberContainer[0].appendChild(totalNumber);
-}
-
-
-// Cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados
+// # Cantidad de estudiantes que superan la meta de puntos en promedio de todos los sprints cursados
 var meetTheTarget = function(totalRatings) {
   var targetExist = document.getElementById('students-meeting-target');
   if (targetExist !== null) {
@@ -446,13 +458,14 @@ var meetTheTarget = function(totalRatings) {
   var studentsThatMeetTheTarget = document.createElement('p');
   //agregando atributos
   studentsThatMeetTheTarget.setAttribute('id', 'students-meeting-target');
+  studentsThatMeetTheTarget.classList.add('display-number'); //clases globales
   studentsThatMeetTheTarget.innerText = sum;
-  console.log(sum);
+  //console.log(sum);
   //añadiendo elemento al html
   achievementContainerOne.appendChild(studentsThatMeetTheTarget);
 }
 
-// Porcentaje del dato anterior
+// % Porcentaje total del dato anterior (Estudiantes que superan)
 //totalRatings y totalStudents son necesarios para la operación
 var superaPercent = function(totalRatings, totalStudents) {
 
@@ -467,10 +480,11 @@ var superaPercent = function(totalRatings, totalStudents) {
     var studentSupera = totalRatings[i].student.supera;
     sum += studentSupera;
   }
-  var achivementPercent = (sum * totalStudents.length) / 100;
+  var achivementPercent = ((sum * totalStudents.length) / 100).toFixed(1);
   //3. creando elemento y agregando un atributo Id
   var achievementRate = document.createElement('p');
   achievementRate.setAttribute('id', 'percent-mmeting-target');
+  achievementRate.classList.add('display-percent'); //estilos globales
   //3.1 inner text con resultado de operación
   achievementRate.innerText = achivementPercent + '%';
   //4. agregando el elemento como child al div contenedor-padre
@@ -478,9 +492,9 @@ var superaPercent = function(totalRatings, totalStudents) {
 }
 
 
-//
-//El Net Promoter Score (NPS) promedio de los sprints cursados
-var promotersPercent = function(totalRatings,promotersSum, passiveSum, detractorsSum){
+
+// % Net Promoter Score (NPS) promedio de los sprints cursados
+var promotersPercent = function(totalRatings) {
 
   //1.-revisar existencia del elemento
   var promotersExist = document.getElementById('nps-container-one');
@@ -488,7 +502,7 @@ var promotersPercent = function(totalRatings,promotersSum, passiveSum, detractor
     promotersExist.remove();
   }
 
-  //2.-operación que calcula el porcentaje, inicia con iteración en pomoters, passive y detractors
+  //2.-operación que calcula el porcentaje, inicia con iteración en promoters, passive y detractors
   var promotersSum = 0;
   var passiveSum = 0;
   var detractorsSum = 0;
@@ -501,21 +515,191 @@ var promotersPercent = function(totalRatings,promotersSum, passiveSum, detractor
     passiveSum += passive;
     detractorsSum += detractors;
   }
-//operación para sacar el promedio de los sprints cursados
+  //operación para sacar el promedio de los sprints cursados
   var totalNpsSum = promotersSum + passiveSum + detractorsSum; //total de alumnas
   var totalPromoters = (promotersSum / totalNpsSum) * 100;
   var totalPassive = (passiveSum / totalNpsSum) * 100;
   var totalDetractors = (detractorsSum / totalNpsSum) * 100;
 
-  var nps = totalPromoters - totalDetractors;
+  var nps = (totalPromoters - totalDetractors).toFixed(1);
 
   //3.-crear el elemento que lo contendrá, y agregar un atributo Id
   var npsRate = document.createElement('p');
-  npsRate.setAttribute('id','nps-container-one');
+  npsRate.setAttribute('id', 'nps-container-one');
+  npsRate.classList.add('display-percent'); //estilos globales
   //3.1- Agregar innerText con el resultado de la operación.
   npsRate.innerText = nps + '%';
   //4.- agregar el elemento contenedor como appendChild al contenedor-padre
   npsContainerOne.appendChild(npsRate);
 }
-
 //Final-llamar a la función en el evento principal onButtonClickGeneration
+
+
+/* # La cantidad que representa el total de estudiantes que superan la meta
+de puntos técnicos en promedio */
+var techSkillsNumber = function(students) {
+
+  //1.-revisar existencia del elemento
+  var techSkillsExist = document.getElementById('skills-container-one');
+  if (techSkillsExist !== null) {
+    techSkillsExist.remove();
+  }
+  //2.- Operación para sacar la cantidad de las que superan la meta,
+  //iterando doble por student y por cada sprint del student
+  //data["AQP"]["2016-2"]['students'][0]['sprints'][0]['score'].tech
+  var sum = 0;
+  for (var studentIndex = 0; studentIndex < students.length; studentIndex++) { //iteracion por objeto students
+    for (var sprintIndex = 0; sprintIndex < students[studentIndex]['sprints'].length; sprintIndex++) //iteración objeto sprints
+      var sprintsData = students[studentIndex]['sprints'][sprintIndex];
+      if(students[studentIndex]['sprints'].length > 0){
+        console.log(sprintsData['score'].tech);
+        if (sprintsData['score'].tech > 1260) {
+          sum++;
+        }
+      }
+  }
+  //3.- Creando elemento, asignando atributo Id, y clase
+  var techSkills = document.createElement('p');
+  techSkills.setAttribute('id', 'skills-container-one');
+  techSkills.classList.add('display-percent');
+  techSkills.innerText = sum;
+  //4.- Agregando child a contenedor-padre
+  skillsContainerOne.appendChild(techSkills);
+}
+//llamar función techSkillsNumber en evento
+
+/*La cantidad que representa el total de estudiantes
+que superan la meta de puntos de HSE en promedio*/
+
+var hseSkillsNumber = function(students) {
+
+  //1.-revisar existencia del elemento
+  var hseSkillsNumber = document.getElementById('skills-container-three');
+  if (hseSkillsNumber !== null) {
+    hseSkillsNumber.remove();
+  }
+  //2.- Operación para sacar cantidad de las que superan la meta,
+  //iterando doble por student y por cada sprint del student
+
+  var sum = 0;
+  for (var studentIndex = 0; studentIndex < students.length; studentIndex++) { //iteracion por objeto students
+    for (var sprintIndex = 0; sprintIndex < students[studentIndex]['sprints'].length; sprintIndex++) //iteración objeto sprints
+      var sprintsData = students[studentIndex]['sprints'][sprintIndex];
+      if(students[studentIndex]['sprints'].length > 0){
+        console.log(sprintsData['score'].hse);
+        if (sprintsData['score'].hse > 840) {
+          sum++;
+        }
+      }
+  }
+  //3.- Creando elemento, asignando atributo Id, y clase
+  var hseSkills = document.createElement('p');
+  hseSkills.setAttribute('id', 'skills-container-three');
+  hseSkills.classList.add('display-percent');
+  hseSkills.innerText = sum;
+  //4.- Agregando child a contenedor-padre
+  skillsContainerThree.appendChild(hseSkills);
+}
+//llamar en evento onButtonClickGeneration
+
+
+
+//% Porcentaje de Estudiantes Satisfechas
+var studentPercentSatisfaction = function(ratings) {
+
+  //1.-revisar existencia del elemento
+  var studentPercentExist = document.getElementById('satisfaction-container-one');
+  if (studentPercentExist !== null) {
+    studentPercentExist.remove();
+  }
+
+  //2.- operación que calcula el Porcentaje
+  var sumCumple = 0;
+  var sumSupera = 0;
+  var sumNoCumple = 0;
+  //iterando en ratings
+  for (var i = 0; i < ratings.length; i++) {
+    var cumple = ratings[i].student.cumple; //Alumnas que cumple con el minimo requerido
+    var supera = ratings[i].student.supera; //Alumnas que supera el minimo requerido
+    var noCumple = ratings[i].student["no-cumple"]; //Alumnas que NO-cumple el minimo requerido
+
+    sumCumple += cumple;
+    sumSupera += supera;
+    sumNoCumple += noCumple;
+    var totalAlumnas = (sumCumple + sumSupera + sumNoCumple);
+    var studentSatisfaction = ((sumCumple + sumSupera) * 100 / totalAlumnas).toFixed(1);
+  }
+  //3.- Crear elementos contenedores, y agregar atributo Id
+  var percentSatisfaction = document.createElement('p');
+  percentSatisfaction.setAttribute('id', 'satisfaction-container-one');
+  percentSatisfaction.classList.add('display-percent');
+  percentSatisfaction.innerText = studentSatisfaction + '%';
+  //4.- Añadiendo child a contenedor-padre
+  satisfactionContainerOne.appendChild(percentSatisfaction);
+}
+//Por ultimo, llamar a la función en el evento onButtonClickGeneration
+
+
+// La puntuación promedio de l@s profesores.
+var teacherRating = function(ratings) {
+
+  //1.-revisar existencia del elemento
+  var teacherRatingExist = document.getElementById('teacher-container-one');
+  if (teacherRatingExist !== null) {
+    teacherRatingExist.remove();
+  }
+  //2.- operacion que calcula el Porcentaje
+  var sumTeacher = 0;
+  for (var i = 0; i < ratings.length; i++) {
+    var teacher = ratings[i].teacher; //Total teachers
+    sumTeacher += teacher;
+  }
+  //puntuacion promedio de los profesores
+  var promTeachers = (sumTeacher / ratings.length).toFixed(1);
+
+  //3.- Creando elemento contenedor, más atributo Id, y clase
+  var teacherRatingPercent = document.createElement('p');
+  teacherRatingPercent.setAttribute('id', 'teacher-container-one');
+  teacherRatingPercent.classList.add('display-percent');
+  teacherRatingPercent.innerText = promTeachers + '%';
+  //4.- Añadiendo como child a su contenedor-padre
+  teacherContainerOne.appendChild(teacherRatingPercent);
+}
+//llamar a la función en evento principal
+
+// La puntuación promedio de l@s jedi masters
+var jediRating = function(ratings) {
+
+    //1.-revisar existencia del elemento
+    var jediRatingExist = document.getElementById('jedi-container-one');
+    if (jediRatingExist !== null) {
+      jediRatingExist.remove();
+    }
+    //2.-operación para obtener Porcentaje
+    var sumJedis = 0;
+    for (var i = 0; i < ratings.length; i++) {
+      var jedi = ratings[i].jedi; //Total jedis
+      sumJedis += jedi;
+    }
+    //puntuacion promedio de los jedis
+    var promJedis = (sumJedis / ratings.length).toFixed(1);
+
+    //3.- Creando elemento contenedor, atributo y clase global de estilos
+    var jediRatingPercent = document.createElement('p');
+    jediRatingPercent.setAttribute('id','jedi-container-one');
+    jediRatingPercent.classList.add('display-percent');
+    jediRatingPercent.innerText = promJedis + '%';
+    //4.- Añadiendo a contenedor-padre
+    jediContainerOne.appendChild(jediRatingPercent);
+}
+//llamar funcion en el evento
+
+
+/*Creando función del evento Click al <select>
+var onButtonClickStudents = function() {
+  var studentsClick.setAttribute('id','studentsClick');
+  var students = document.getElementById('studentsClick');
+//cuando suceda click, muestra este div
+
+}
+sedes.addEventListener('click', onButtonClickStudents);*/

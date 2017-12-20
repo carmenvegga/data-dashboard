@@ -1,509 +1,577 @@
 body {
-	margin: 0;
-	padding: 0;
-	font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
 }
 
 /*estilos del header*/
 
 .nav-bar {
-	width: 100%;
-	height: 80px;
+  width: 100%;
+  height: 80px;
 }
 
 .logo-section {
-	display: inline-block;
-	width: 20%;
-	height: 60px;
-	background-color: white;
+  display: inline-block;
+  width: 20%;
+  height: 60px;
+  background-color: white;
 }
 
 .user-section {
+	vertical-align: top;
 	display: inline-block;
 	width: 80%;
 	height: 80px;
 	background-color: #F7B617;
 }
 
+#menu {
+  height: 80px;
+  width: 40%;
+  background-color: #F7B617;
+  color: black;
+  vertical-align: top;
+  display: inline-block;
+}
+
+ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+.sub {
+  padding: 10px 10px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  margin-top: 20px;
+  border-right: 1px solid black;
+}
+
+.sub:hover {
+  background-color: #F7B617;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px #4c4c4c;
+}
+
+.log-out-button {
+  margin-top: 30px;
+  margin-left: 20px;
+  vertical-align: top;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  color: black;
+  background-color: #F7B617;
+  border: 2px solid #F7B617;
+  box-shadow: 1px 1px 3px #4c4c4c;
+  display: inline-block;
+}
+
+.log-out-button:hover {
+  color: black;
+  background-color: #F7B617;
+  border: 2px solid black;
+}
+
+.settings-button {
+  margin-top: 30px;
+  margin-left: 320px;
+  vertical-align: top;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  color: black;
+  background-color: #F7B617;
+  border: 2px solid #F7B617;
+  box-shadow: 1px 1px 3px #4c4c4c;
+  display: inline-block;
+}
+
+.settings-button:hover {
+  color: black;
+  background-color: #F7B617;
+  border: 2px solid black;
+}
+
+.fa-cog {
+  color: black;
+  margin-left: 5px;
+}
+
 .logo {
-	width: 80%;
-	margin-left: 22px;
+  width: 80%;
+  margin-left: 22px;
 }
 
 /*estilos de la SECCIÓN PRINCIPAL*/
+/*
+.sedes {
+  border: 1px solid #F7B617;
+}  */
 
 .main-side {
-	width: 20%;
-	display:inline-block;
-	height: 900px;
+  width: 20%;
+  display: inline-block;
+  height: 900px;
 }
 
 .main-body {
-	width: 80%;
-	display:inline-block;
-	height: 500px;
-	vertical-align: top;
+  width: 80%;
+  display: inline-block;
+  height: 500px;
+  vertical-align: top;
 }
-
 
 /* seccion principal (barra gris lateral)*/
 
 .side-container {
-	width: 100%;
-	display: inline-block;
-	height: 900px;
-	background-color: #333333;
+  width: 100%;
+  display: inline-block;
+  height: 900px;
+  background-color: #333333;
 }
 
 /* sección principal (datos)*/
 
 .first-section {
-	box-sizing:border-box;
-	width: 960px;
-	height: 200px;
-	margin-top:40px;
-	margin-left: 20px;
-	vertical-align: 100%;
+  box-sizing: border-box;
+  width: 960px;
+  height: 200px;
+  margin-top: 40px;
+  margin-left: 20px;
+  vertical-align: 100%;
 }
 
 .enrollment {
-	width: 270px;
-	height: 200px;
-	display: inline-block;
-	background-color: #333333;
-	box-shadow: 6px 6px 30px  #333333;
-	margin-left: 40px;
-	vertical-align: top;
+  width: 270px;
+  height: 200px;
+  display: inline-block;
+  background-color: #333333;
+  box-shadow: 6px 6px 30px #333333;
+  margin-left: 40px;
+  vertical-align: top;
 }
 
 .enrollment-title {
-	color:#5C5B5B;
-	text-align: center;
-	text-shadow: 0.5px 0.5px 5px black;
-	margin-bottom: 10px;
-	font-size: 25px;
+  color: #5C5B5B;
+  text-align: center;
+  text-shadow: 0.5px 0.5px 5px black;
+  margin-bottom: 10px;
+  font-size: 25px;
 }
 
 .enrollment-rule {
-	height: 2px;
-	width: 250px;
-	background-color: #F7B617;
-	margin-left: 10px;
+  height: 2px;
+  width: 250px;
+  background-color: #F7B617;
+  margin-left: 10px;
 }
 
 .enrollment-container-one {
-	width: 43%;
-	height: 60px;
-	background-color: #5C5B5B;
-	margin-top: 20px;
-	margin-left: 13px;
-	display: inline-block;
-	vertical-align: top;
+  width: 43%;
+  height: 60px;
+  background-color: #5C5B5B;
+  margin-top: 20px;
+  margin-left: 13px;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .enrollment-container-two {
-	width: 43%;
-	height: 60px;
-	background-color: #5C5B5B;
-	margin-top: 20px;
-	margin-left: 12px;
-	display: inline-block;
+  width: 43%;
+  height: 60px;
+  background-color: #5C5B5B;
+  margin-top: 20px;
+  margin-left: 12px;
+  display: inline-block;
 }
 
 .enrollment-desc-one {
-	display: inline-block;
-	font-size: 12px;
-	width: 100px;
-	margin-left: 35px;
-	text-align: justify;
-	text-justify: inter-word;
-	margin-top: 10px;
-	color:#5C5B5B;
-	font-weight: 700;
+  display: inline-block;
+  font-size: 12px;
+  width: 100px;
+  margin-left: 35px;
+  text-align: justify;
+  text-justify: inter-word;
+  margin-top: 10px;
+  color: #5C5B5B;
+  font-weight: 700;
 }
 
 .enrollment-desc-two {
-	display: inline-block;
-	font-size: 12px;
-	width: 100px;
-	vertical-align: top;
-	margin-left: 25px;
-	color:#5C5B5B;
-	font-weight: 700;
+  display: inline-block;
+  font-size: 12px;
+  width: 100px;
+  vertical-align: top;
+  margin-left: 25px;
+  color: #5C5B5B;
+  font-weight: 700;
 }
 
-
-
 .achievement {
-	width: 270px;
-	height: 200px;
-	display: inline-block;
-	background-color: #333333;
-	box-shadow: 6px 6px 30px  #333333;
-	margin-left: 40px;
+  width: 270px;
+  height: 200px;
+  display: inline-block;
+  background-color: #333333;
+  box-shadow: 6px 6px 30px #333333;
+  margin-left: 40px;
 }
 
 .achievement-title {
-	color:#5C5B5B;
-	text-align: center;
-	text-shadow: 0.5px 0.5px 5px black;
-	margin-bottom: 10px;
-	font-size: 25px;
+  color: #5C5B5B;
+  text-align: center;
+  text-shadow: 0.5px 0.5px 5px black;
+  margin-bottom: 10px;
+  font-size: 25px;
 }
 
 .achievement-rule {
-	height: 2px;
-	width: 250px;
-	background-color: #F7B617;
-	margin-left: 10px;
+  height: 2px;
+  width: 250px;
+  background-color: #F7B617;
+  margin-left: 10px;
 }
 
 .achievement-container-one {
-	width: 43%;
-	height: 60px;
-	background-color: #5C5B5B;
-	margin-top: 20px;
-	margin-left: 13px;
-	display: inline-block;
+  width: 43%;
+  height: 60px;
+  background-color: #5C5B5B;
+  margin-top: 20px;
+  margin-left: 13px;
+  display: inline-block;
 }
 
 .achievement-container-two {
-	width: 43%;
-	height: 60px;
-	background-color: #5C5B5B;
-	margin-top: 20px;
-	margin-left: 12px;
-	display: inline-block;
+  width: 43%;
+  height: 60px;
+  background-color: #5C5B5B;
+  margin-top: 20px;
+  margin-left: 12px;
+  display: inline-block;
 }
 
 .achievement-desc-one {
-	display: inline-block;
-	font-size: 12px;
-	width: 75px;
-	margin-left: 35px;
-	text-align: justify;
-	text-justify: auto;
-	margin-top: 10px;
-	color:#5C5B5B;
-	font-weight: 700;
+  display: inline-block;
+  font-size: 12px;
+  width: 75px;
+  margin-left: 35px;
+  text-align: justify;
+  text-justify: auto;
+  margin-top: 10px;
+  color: #5C5B5B;
+  font-weight: 700;
 }
 
 .achievement-desc-two {
-	display: inline-block;
-	font-size: 12px;
-	width: 100px;
-	vertical-align: top;
-	margin-left: 40px;
-	color:#5C5B5B;
-	font-weight: 700;
+  display: inline-block;
+  font-size: 12px;
+  width: 100px;
+  vertical-align: top;
+  margin-left: 40px;
+  color: #5C5B5B;
+  font-weight: 700;
 }
 
-
-
-
-
 .nps {
-	width: 270px;
-	height: 200px;
-	display: inline-block;
-	background-color: #333333;
-	box-shadow: 6px 6px 30px  #333333;
-	margin-left: 40px;
-	vertical-align: top;
+  width: 270px;
+  height: 200px;
+  display: inline-block;
+  background-color: #333333;
+  box-shadow: 6px 6px 30px #333333;
+  margin-left: 40px;
+  vertical-align: top;
 }
 
 .nps-title {
-	color:#5C5B5B;
-	text-align: center;
-	text-shadow: 0.5px 0.5px 5px black;
-	margin-bottom: 10px;
-	font-size: 25px;
+  color: #5C5B5B;
+  text-align: center;
+  text-shadow: 0.5px 0.5px 5px black;
+  margin-bottom: 10px;
+  font-size: 25px;
 }
 
 .nps-rule {
-	height: 2px;
-	width: 250px;
-	background-color: #F7B617;
-	margin-left: 10px;
+  height: 2px;
+  width: 250px;
+  background-color: #F7B617;
+  margin-left: 10px;
 }
 
 .nps-container-one {
-	width: 60%;
-	height: 60px;
-	background-color: #5C5B5B;
-	margin-top: 20px;
-	margin-left: 55px;
-	display: inline-block;
+  width: 60%;
+  height: 60px;
+  background-color: #5C5B5B;
+  margin-top: 20px;
+  margin-left: 55px;
+  display: inline-block;
 }
-
 
 .nps-desc-one {
-	display: inline-block;
-	font-size: 12px;
-	margin-left: 80px;
-	margin-top: 10px;
-	color:#5C5B5B;
-	font-weight: 700;
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 80px;
+  margin-top: 10px;
+  color: #5C5B5B;
+  font-weight: 700;
 }
-
 
 .second-section {
-	box-sizing:border-box;
-	width: 960px;
-	height: 300px;
-	margin-top:40px;
-	margin-left:30px;
-	vertical-align: 100%;
+  box-sizing: border-box;
+  width: 960px;
+  height: 300px;
+  margin-top: 40px;
+  margin-left: 30px;
+  vertical-align: 100%;
 }
 
-
 .skills {
-	width: 890px;
-	height: 100px;
-	display: inline-block;
-	background-color: #333333;
-	box-shadow: 6px 15px 30px  #333333;
-	margin-left: 30px;
-	vertical-align: top;
+  width: 890px;
+  height: 100px;
+  display: inline-block;
+  background-color: #333333;
+  box-shadow: 6px 15px 30px #333333;
+  margin-left: 30px;
+  vertical-align: top;
 }
 
 .skills-tech {
-	color:#5C5B5B;
-	text-shadow: 0.5px 0.5px 5px black;
-	margin-bottom: 10px;
-	font-size: 25px;
-	display:inline-block;
-	margin-left: 120px;
+  color: #5C5B5B;
+  text-shadow: 0.5px 0.5px 5px black;
+  margin-bottom: 10px;
+  font-size: 25px;
+  display: inline-block;
+  margin-left: 120px;
 }
 
 .skills-by-sprint-1 {
-	border: 2px solid #5C5B5B;
-	width: 100px;
-	height: 15px;
-	display: inline-block;
-	margin-left: 20px;
+  width: 100px;
+  height: 15px;
+  display: inline-block;
+  margin-left: 20px;
 }
 
-
 .skills-life {
-	color:#5C5B5B;
-	text-shadow: 0.5px 0.5px 5px black;
-	margin-bottom: 10px;
-	font-size: 25px;
-	display:inline-block;
-	margin-left: 90px;
+  color: #5C5B5B;
+  text-shadow: 0.5px 0.5px 5px black;
+  margin-bottom: 10px;
+  font-size: 25px;
+  display: inline-block;
+  margin-left: 90px;
 }
 
 .skills-by-sprint-2 {
-	border: 2px solid #5C5B5B;
-	width: 100px;
-	height: 15px;
-	display: inline-block;
-	margin-left: 20px;
+  width: 100px;
+  height: 15px;
+  display: inline-block;
+  margin-left: 20px;
 }
 
 .skills-two {
-	width: 890px;
-	height: 200px;
-	display: inline-block;
-	background-color: #333333;
-	box-shadow: 6px 6px 30px  #333333;
-	margin-left: 30px;
-	vertical-align: top;
-	background-color: #F7B617;
+  width: 890px;
+  height: 200px;
+  display: inline-block;
+  background-color: #333333;
+  box-shadow: 6px 6px 30px #333333;
+  margin-left: 30px;
+  vertical-align: top;
+  background-color: #F7B617;
 }
 
 .skills-container-one, .skills-container-two {
-	width: 150px;
-	height: 90px;
-	background-color: white;
-	margin-top: 40px;
-	margin-left: 55px;
-	display: inline-block;
-	vertical-align: top;
+  width: 150px;
+  height: 90px;
+  background-color: white;
+  margin-top: 40px;
+  margin-left: 55px;
+  display: inline-block;
+  vertical-align: top;
 }
 
-
 .skills-container-three, .skills-container-four {
-	width: 150px;
-	height: 90px;
-	background-color: white;
-	margin-top: 40px;
-	margin-left: 55px;
-	display: inline-block;
-	vertical-align: top;
+  width: 150px;
+  height: 90px;
+  background-color: white;
+  margin-top: 40px;
+  margin-left: 55px;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .skills-container-three {
-	margin-left: 34px;
+  margin-left: 34px;
 }
 
 .skills-ruler {
-	height: 180px;
-	width: 3px;
-	background-color: #333333;
-	display: inline-block;
-	margin-top: 10px;
-	margin-left: 34px;
+  height: 180px;
+  width: 3px;
+  background-color: #333333;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 34px;
 }
 
 .third-section {
-	box-sizing:border-box;
-	width: 960px;
-	height: 230px;
-	margin-top:40px;
-	margin-left:30px;
-	vertical-align: 100%;
+  box-sizing: border-box;
+  width: 960px;
+  height: 230px;
+  margin-top: 40px;
+  margin-left: 30px;
+  vertical-align: 100%;
 }
 
 .satisfaction {
-	width: 270px;
-	height: 230px;
-	display: inline-block;
-	background-color: #333333;
-	box-shadow: 6px 6px 30px  #333333;
-	margin-left: 35px;
-	vertical-align: top;
+  width: 270px;
+  height: 230px;
+  display: inline-block;
+  background-color: #333333;
+  box-shadow: 6px 6px 30px #333333;
+  margin-left: 35px;
+  vertical-align: top;
 }
 
 .satisfaction-title {
-	color:#5C5B5B;
-	text-align: center;
-	text-shadow: 0.5px 0.5px 5px black;
-	margin-bottom: 10px;
-	font-size: 25px;
+  color: #5C5B5B;
+  text-align: center;
+  text-shadow: 0.5px 0.5px 5px black;
+  margin-bottom: 10px;
+  font-size: 25px;
 }
 
 .satisfaction-rule {
-	height: 2px;
-	width: 250px;
-	background-color: #F7B617;
-	margin-left: 10px;
+  height: 2px;
+  width: 250px;
+  background-color: #F7B617;
+  margin-left: 10px;
 }
 
 .satisfaction-container-one {
-	width: 60%;
-	height: 60px;
-	background-color: #5C5B5B;
-	margin-top: 20px;
-	margin-left: 55px;
-	display: inline-block;
+  width: 60%;
+  height: 60px;
+  background-color: #5C5B5B;
+  margin-top: 20px;
+  margin-left: 55px;
+  display: inline-block;
 }
 
 .satisfaction-desc-one {
-	display: inline-block;
-	font-size: 12px;
-	margin-left: 13px;
-	margin-top: 10px;
-	color:#5C5B5B;
-	font-weight: 700;
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 13px;
+  margin-top: 10px;
+  color: #5C5B5B;
+  font-weight: 700;
 }
 
 .teacher {
-	width: 270px;
-	height: 230px;
-	display: inline-block;
-	background-color: #333333;
-	box-shadow: 6px 6px 30px  #333333;
-	margin-left: 35px;
-	vertical-align: top;
+  width: 270px;
+  height: 230px;
+  display: inline-block;
+  background-color: #333333;
+  box-shadow: 6px 6px 30px #333333;
+  margin-left: 35px;
+  vertical-align: top;
 }
 
 .teacher-title {
-	color:#5C5B5B;
-	text-align: center;
-	text-shadow: 0.5px 0.5px 5px black;
-	margin-bottom: 10px;
-	margin-top: 54px;
-	font-size: 25px;
+  color: #5C5B5B;
+  text-align: center;
+  text-shadow: 0.5px 0.5px 5px black;
+  margin-bottom: 10px;
+  margin-top: 54px;
+  font-size: 25px;
 }
 
 .teacher-rule {
-	height: 2px;
-	width: 250px;
-	background-color: #F7B617;
-	margin-left: 10px;
+  height: 2px;
+  width: 250px;
+  background-color: #F7B617;
+  margin-left: 10px;
 }
 
 .teacher-container-one {
-	width: 60%;
-	height: 60px;
-	background-color: #5C5B5B;
-	margin-top: 20px;
-	margin-left: 55px;
-	display: inline-block;
+  width: 60%;
+  height: 60px;
+  background-color: #5C5B5B;
+  margin-top: 20px;
+  margin-left: 55px;
+  display: inline-block;
 }
 
 .teacher-desc-one {
-	display: inline-block;
-	font-size: 12px;
-	margin-left: 53px;
-	margin-top: 10px;
-	color:#5C5B5B;
-	font-weight: 700;
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 53px;
+  margin-top: 10px;
+  color: #5C5B5B;
+  font-weight: 700;
 }
 
 .jedi {
-	width: 270px;
-	height: 230px;
-	display: inline-block;
-	background-color: #333333;
-	box-shadow: 6px 6px 30px  #333333;
-	margin-left: 35px;
-	vertical-align: top;
+  width: 270px;
+  height: 230px;
+  display: inline-block;
+  background-color: #333333;
+  box-shadow: 6px 6px 30px #333333;
+  margin-left: 35px;
+  vertical-align: top;
 }
 
 .jedi-title {
-	color:#5C5B5B;
-	text-align: center;
-	text-shadow: 0.5px 0.5px 5px black;
-	margin-bottom: 10px;
-	margin-top: 54px;
-	font-size: 25px;
+  color: #5C5B5B;
+  text-align: center;
+  text-shadow: 0.5px 0.5px 5px black;
+  margin-bottom: 10px;
+  margin-top: 54px;
+  font-size: 25px;
 }
 
 .jedi-rule {
-	height: 2px;
-	width: 250px;
-	background-color: #F7B617;
-	margin-left: 10px;
+  height: 2px;
+  width: 250px;
+  background-color: #F7B617;
+  margin-left: 10px;
 }
 
 .jedi-container-one {
-	width: 60%;
-	height: 60px;
-	background-color: #5C5B5B;
-	margin-top: 20px;
-	margin-left: 55px;
-	display: inline-block;
+  width: 60%;
+  height: 60px;
+  background-color: #5C5B5B;
+  margin-top: 20px;
+  margin-left: 55px;
+  display: inline-block;
 }
 
 .jedi-desc-one {
-	display: inline-block;
-	font-size: 12px;
-	margin-left: 67px;
-	margin-top: 10px;
-	color:#5C5B5B;
-	font-weight: 700;
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 67px;
+  margin-top: 10px;
+  color: #5C5B5B;
+  font-weight: 700;
 }
 
+/* estilos data*/
 
-/*estilos data*/
-
-.total-enrolled-students{
-	color: white;
-	font-size: 55px;
-	margin-top: -10px;
-	margin-left: 45px;
-	display: inline-block;
-	text-align: center;
+.display-number {
+  color: white;
+  font-size: 45px;
+  margin-top: 0px;
+  margin-left: 35px;
+  display: inline-block;
+  text-align: center;
 }
 
-.dropout {
-	color: #F7B617;
-	font-size: 50px;
-	margin-top: -5px ;
-	margin-left: 10px;
-	display: inline-block;
-	text-align: center;
+.display-percent {
+  color: #F7B617;
+  font-size: 40px;
+  margin-top: 0px;
+  margin-left: 10px;
+  display: inline-block;
+  text-align: center;
 }
