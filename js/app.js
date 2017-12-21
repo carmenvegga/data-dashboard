@@ -271,17 +271,17 @@ containerSelect.appendChild(selectSedesD);
 selectSedesD.appendChild(option);
 
 
-
 //creando variables globales, para accesar a las keys,
+//contenedores
 var selectSedes = null;
 var generationGlobal = null;
-var selectedStudents = null;
+//var selectedStudents = null;
 
 //Creando primera función,  mapSedes (mapea data de sedes)
 var mapSedes = function(data) {
   //variables locales que conectan con data
   var sedeList = Object.keys(data);
-  //definiendo el elemento <select> por medio de su Id 'sedes'
+  //definiendo el elemento <select>, tomándolo de su id 'sedes'
   var selectSedes = document.getElementById('sedes');
 
   for (var i = 0; i < sedeList.length; i++) {
@@ -703,10 +703,10 @@ var jediRating = function(ratings) {
 //llamar funcion en el evento
 
 
-/*Creando función del evento Click al <select>
+/*Creando función del evento Click
 var onButtonClickStudents = function() {
-  var studentsClick.setAttribute('id','studentsClick');
-  var students = document.getElementById('studentsClick');
+  var studentsClick.setAttribute('id','students-click');
+  var students = document.getElementById('students-click');
 //cuando suceda click, muestra este div
 
 }
