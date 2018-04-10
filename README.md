@@ -1,4 +1,6 @@
 # Data Dashboard Laboratoria
+![laboratoria-4](https://user-images.githubusercontent.com/30419144/38586570-e19a8fb2-3ce3-11e8-932b-85ac85589dc7.jpg)
+
 
  Las TMs han solicitado que construyamos una herramienta web donde puedan ver estos datos fácil y rápidamente. Y nos comentaron que estos son los datos que revisan normalmente:
 
